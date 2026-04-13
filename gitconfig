@@ -5,10 +5,10 @@
 	branch-name = !git rev-parse --abbrev-ref HEAD
 	publish = !git push -u origin $(git branch-name)
 	unpublish = !git push origin :$(git branch-name)
-	
+
 	co = checkout
 	count = !git shortlog -sn
-	
+
 	re-ignore = !git rm --cached -r . && git add -A
 	ec = config --global -e
 	up = !git fetch --prune && git pull --rebase --prune $@ && git submodule update --init --recursive
@@ -60,3 +60,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[include]
+  path = .gitconfig.local
