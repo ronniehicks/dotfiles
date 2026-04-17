@@ -18,6 +18,7 @@ source $ZSH/oh-my-zsh.sh
 
 # initialize autocomplete here, otherwise functions won't be loaded
 fpath+=~/.zfunc
+fpath=($HOME/.dotfiles/functions $fpath)
 autoload -U compinit && compinit
 
 # matches case insensitive for lowercase
@@ -25,8 +26,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
-
-fpath=($HOME/.dotfiles/functions $fpath)
 
 autoload -U $HOME/.dotfiles/functions/*(:t)
 
